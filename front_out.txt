@@ -1,0 +1,96 @@
+
+Clark, CSCI 4200, Spring 2025, Parser
+*******************************************************
+
+Input line: average = (num1 +    num2   ) / 2
+Next token is: IDENT, Next lexeme is average
+Enter <assign>
+Next token is: ASSIGN_OP, Next lexeme is =
+Next token is: LEFT_PAREN, Next lexeme is (
+Enter <expr>
+Enter <term>
+Enter <factor>
+Next token is: IDENT, Next lexeme is num1
+Enter <expr>
+Enter <term>
+Enter <factor>
+Next token is: ADD_OP, Next lexeme is +
+Exit <factor>
+Exit <term>
+Next token is: IDENT, Next lexeme is num2
+Enter <term>
+Enter <factor>
+Next token is: RIGHT_PAREN, Next lexeme is )
+Exit <factor>
+Exit <term>
+Exit <expr>
+Next token is: DIV_OP, Next lexeme is /
+Exit <factor>
+Next token is: INT_LIT, Next lexeme is 2
+Enter <factor>
+Next token is: EOF, Next lexeme is EOF
+Exit <factor>
+Exit <term>
+Exit <expr>
+Exit <assign>
+
+Input line: assignERR 15
+Next token is: IDENT, Next lexeme is assignERR
+Enter <assign>
+Next token is: INT_LIT, Next lexeme is 15
+****** ERROR: ASSIGN_OP Expected ******
+Exit <assign>
+
+Input line: = identERR
+Next token is: ASSIGN_OP, Next lexeme is =
+Enter <assign>
+****** ERROR: IDENT Expected ******
+Exit <assign>
+
+Input line: rightParenERR = (num1 + n
+Next token is: IDENT, Next lexeme is rightParenERR
+Enter <assign>
+Next token is: ASSIGN_OP, Next lexeme is =
+Next token is: LEFT_PAREN, Next lexeme is (
+Enter <expr>
+Enter <term>
+Enter <factor>
+Next token is: IDENT, Next lexeme is num1
+Enter <expr>
+Enter <term>
+Enter <factor>
+Next token is: ADD_OP, Next lexeme is +
+Exit <factor>
+Exit <term>
+Next token is: IDENT, Next lexeme is n
+Enter <term>
+Enter <factor>
+Next token is: EOF, Next lexeme is EOF
+Exit <factor>
+Exit <term>
+Exit <expr>
+****** ERROR: RIGHT_PAREN Expected ******
+Exit <factor>
+Exit <term>
+Exit <expr>
+Exit <assign>
+
+Input line: factorERR = *
+Next token is: IDENT, Next lexeme is factorERR
+Enter <assign>
+Next token is: ASSIGN_OP, Next lexeme is =
+Next token is: MULT_OP, Next lexeme is *
+Enter <expr>
+Enter <term>
+Enter <factor>
+****** ERROR: IDENT, INT_LIT, or LEFT_PAREN Expected ******
+Exit <factor>
+Next token is: EOF, Next lexeme is EOF
+Enter <factor>
+****** ERROR: IDENT, INT_LIT, or LEFT_PAREN Expected ******
+Exit <factor>
+Exit <term>
+Exit <expr>
+Exit <assign>
+
+Parsing the program is complete!

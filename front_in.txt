@@ -1,0 +1,5 @@
+average = (num1 +    num2   ) / 2
+assignERR 15
+= identERR
+rightParenERR = (num1 + n
+factorERR = *
